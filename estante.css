@@ -1,0 +1,321 @@
+
+/* CONFIGURAÇÃO */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #f2f2f7;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ESTANTE */
+
+.estante {
+    width: 100%;
+    height: 230px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    gap: 5px;
+    padding: 15px 14px 12px;
+
+    background: linear-gradient(
+        to bottom,
+        #351b0e,
+        #170a05
+    );
+
+    border-bottom: 14px solid #70401f;
+
+    box-shadow: 0 8px 20px #0008;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* LIVROS */
+
+.livro {
+    width: 62px;
+    height: 190px;
+
+    flex: 1 1 45px;
+
+    min-width: 45px;
+    max-width: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    border-radius: 4px 4px 2px 2px;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    box-shadow:
+        inset 3px 0 5px #ffffff18,
+        inset -5px 0 7px #0008,
+        3px 3px 7px #0008;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        filter .3s ease;
+
+    transform-origin: bottom center;
+}
+
+
+/* NOMES DOS LIVROS */
+
+.livro span {
+    color: #ead9b8;
+
+    font-family: Georgia, serif;
+    font-size: 11px;
+    font-weight: bold;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    text-align: center;
+    text-shadow: 1px 1px 2px #000;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+
+/* BRILHO */
+
+.livro::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 8px;
+
+    width: 3px;
+    height: 100%;
+
+    background: #ffffff18;
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.livro:hover {
+    transform: translateY(-20px) scale(1.13);
+
+    z-index: 20;
+
+    filter: brightness(1.2);
+
+    box-shadow:
+        0 18px 25px #0009,
+        0 0 12px #fff2,
+        inset 3px 0 6px #ffffff25,
+        inset -5px 0 7px #0008;
+}
+
+
+/* CLIQUE */
+
+.livro:active {
+    transform: translateY(-17px) scale(1.08);
+}
+
+
+/* CORES DOS LIVROS */
+
+.livro1 {
+    background: linear-gradient(90deg, #5a321b, #9a5c2e, #472515);
+}
+
+.livro2 {
+    background: linear-gradient(90deg, #294438, #52705e, #1d3028);
+}
+
+.livro3 {
+    background: linear-gradient(90deg, #26251d, #55503c, #1c1b15);
+}
+
+.livro4 {
+    background: linear-gradient(90deg, #661e20, #963b35, #421315);
+}
+
+.livro5 {
+    background: linear-gradient(90deg, #67401f, #a76a31, #4c2c16);
+}
+
+.livro6 {
+    background: linear-gradient(90deg, #252f31, #486166, #192123);
+}
+
+.livro7 {
+    background: linear-gradient(90deg, #542c24, #82473a, #361a16);
+}
+
+.livro8 {
+    background: linear-gradient(90deg, #3e2921, #75503d, #2b1b16);
+}
+
+.livro9 {
+    background: linear-gradient(90deg, #3e4b29, #687546, #29321b);
+}
+
+.livro10 {
+    background: linear-gradient(90deg, #54251d, #86382e, #351512);
+}
+
+.livro11 {
+    background: linear-gradient(90deg, #49321e, #765231, #302015);
+}
+
+.livro12 {
+    background: linear-gradient(90deg, #59201e, #913b34, #3a1211);
+}
+
+.livro13 {
+    background: linear-gradient(90deg, #27372e, #4e6857, #19251f);
+}
+
+.livro14 {
+    background: linear-gradient(90deg, #633b24, #94603b, #422718);
+}
+
+.livro15 {
+    background: linear-gradient(90deg, #302d23, #635b45, #1e1c16);
+}
+
+.livro16 {
+    background: linear-gradient(90deg, #662526, #923b3b, #401617);
+}
+
+.livro17 {
+    background: linear-gradient(90deg, #24373b, #49656a, #18272a);
+}
+
+.livro18 {
+    background: linear-gradient(90deg, #4d2b1b, #80502d, #321b11);
+}
+
+
+/* CONTEÚDO */
+
+.conteudo {
+    min-height: calc(100vh - 230px);
+
+    padding: 55px 20px;
+
+    text-align: center;
+}
+
+.conteudo h1 {
+    margin-bottom: 12px;
+
+    font-family: Georgia, serif;
+    font-size: 36px;
+
+    color: #222;
+}
+
+.conteudo > p {
+    color: #777;
+    font-size: 17px;
+}
+
+
+/* VÍDEO NA ÁREA BRANCA */
+
+.video-preview {
+    display: none;
+
+    width: 450px;
+    max-width: 90%;
+
+    margin: 35px auto;
+
+    padding: 10px;
+
+    background: #142b49;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px #0004;
+}
+
+.video-preview video {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 8px;
+}
+
+.video-preview p {
+    color: white;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+
+/* MOSTRAR VÍDEO AO PASSAR NO SEGUNDO LIVRO */
+
+body:has(.livro2:hover) .video-preview {
+    display: block;
+}
+
+
+/* EFEITO NO TEXTO */
+
+.estante:has(.livro:hover) + .conteudo > p {
+    color: #333;
+    transform: translateY(3px);
+}
+
+
+/* CELULAR */
+
+@media (max-width: 900px) {
+
+    .estante {
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .livro {
+        flex: 0 0 55px;
+        min-width: 55px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .conteudo h1 {
+        font-size: 27px;
+    }
+
+    .video-preview {
+        width: 350px;
+    }
+
+}
